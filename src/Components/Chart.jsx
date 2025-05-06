@@ -61,7 +61,7 @@ const Chat = () => {
                 headers: {
                     "Authorization": "Bearer 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",
                     "Content-Type": "application/json",
-                    "HTTP-Referer": "https://ai-video-and-chart-dashboard.vercel.app/",
+                    "HTTP-Referer": window.location.origin,
                     "X-Title": "My Chat App",
                 },
                 body: JSON.stringify({
@@ -124,8 +124,8 @@ const Chat = () => {
                         >
                             <div
                                 className={`max-w-[70%] p-3 rounded-xl text-sm ${msg.role === "user"
-                                        ? "bg-blue-100 text-black"
-                                        : "bg-white border text-gray-700"
+                                    ? "bg-blue-100 text-black"
+                                    : "bg-white border text-gray-700"
                                     }`}
                             >
                                 <p>{msg.text}</p>
@@ -143,23 +143,23 @@ const Chat = () => {
             {/* Header */}
             {
                 currentUser.map((data, index) => {
-                    return(
+                    return (
                         <div key={index} className="bg-white shadow p-4 flex items-center gap-4">
-                        <img
-                            src={data.profile}
-                            alt="User"
-                            className="w-12 h-12 rounded-full object-cover"
-                        />
-                        <div>
-                            <h2 className="text-lg text-gray-500 font-semibold">{data.name}</h2>
-                            <p className="text-sm text-gray-500">{data.gender} • {data.age} y.o.</p>
+                            <img
+                                src={data.profile}
+                                alt="User"
+                                className="w-12 h-12 rounded-full object-cover"
+                            />
+                            <div>
+                                <h2 className="text-lg text-gray-500 font-semibold">{data.name}</h2>
+                                <p className="text-sm text-gray-500">{data.gender} • {data.age} y.o.</p>
+                            </div>
                         </div>
-                    </div>
-        
+
                     )
                 })
             }
-           
+
             {/* Tabs */}
             <div className="flex justify-around border-b text-sm text-gray-500">
                 <button className="py-2 px-4">Record</button>
