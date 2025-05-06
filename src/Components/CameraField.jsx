@@ -74,9 +74,8 @@ const CameraField = () => {
       const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: 'POST',
         headers: {
-          "Authorization": "Bearer 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",
+          Authorization: "Bearer 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",
           "Content-Type": "application/json",
-          "HTTP-Referer": window.location.origin,
           "X-Title": "My Chat App",
         },
         body: JSON.stringify({
