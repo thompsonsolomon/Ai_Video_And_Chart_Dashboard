@@ -12,6 +12,8 @@ const CameraField = () => {
   const [error, setError] = useState('');
   const recognitionRef = useRef(null);
 
+  const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
+
   useEffect(() => {
     return () => {
       window.speechSynthesis.cancel();
@@ -74,7 +76,7 @@ const CameraField = () => {
       const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: 'POST',
         headers: {
-          Authorization: "Bearer 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",
+          Authorization: `Bearer ${apiKey}`,
           "Content-Type": "application/json",
           "X-Title": "My Chat App",
         },

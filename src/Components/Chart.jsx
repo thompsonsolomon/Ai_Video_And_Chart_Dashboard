@@ -1,14 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { currentUser } from "./data";
-
-// const getDateLabel = (date = new Date()) =>
-//   date.toLocaleDateString(undefined, {
-//     weekday: "short",
-//     year: "numeric",
-//     month: "short",
-//     day: "numeric",
-//   });
-
 const isToday = (someDate) => {
     const today = new Date();
     return (
@@ -17,6 +8,7 @@ const isToday = (someDate) => {
         someDate.getFullYear() === today.getFullYear()
     );
 };
+const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY;
 
 const Chat = () => {
     const [chat, setChat] = useState([]);
@@ -59,7 +51,7 @@ const Chat = () => {
             const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
                 method: "POST",
                 headers: {
-                    "Authorization": "Bearer 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",
+                    Authorization: `Bearer ${apiKey}`,
                     "Content-Type": "application/json",
                     "X-Title": "My Chat App",
                 },
