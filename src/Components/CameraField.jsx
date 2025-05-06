@@ -76,6 +76,7 @@ const CameraField = () => {
         headers: {
           "Authorization": "Bearer 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",
           "Content-Type": "application/json",
+          "HTTP-Referer": "https://ai-video-and-chart-dashboard.vercel.app/",
           "X-Title": "My Chat App",
         },
         body: JSON.stringify({
