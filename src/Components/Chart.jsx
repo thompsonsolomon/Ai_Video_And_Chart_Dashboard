@@ -61,7 +61,6 @@ const Chat = () => {
                 headers: {
                     "Authorization": "Bearer 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",
                     "Content-Type": "application/json",
-                    "HTTP-Referer": "http://localhost:5173/",
                     "X-Title": "My Chat App",
                 },
                 body: JSON.stringify({
