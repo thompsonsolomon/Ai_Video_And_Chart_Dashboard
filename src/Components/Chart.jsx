@@ -60,7 +60,7 @@ const Chat = () => {
                     messages: [
                         {
                             role: "system",
-                            content: `You are chatting with Solomon's assistant.`,
+                            content: `You are chatting with Solomon's assistant. Always respond in English.`,
                         },
                         ...updatedChat.map((msg) => ({
                             role: msg.role === "user" ? "user" : "assistant",

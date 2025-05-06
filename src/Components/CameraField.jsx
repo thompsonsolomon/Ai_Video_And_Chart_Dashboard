@@ -82,7 +82,17 @@ const CameraField = () => {
         },
         body: JSON.stringify({
           model: 'gpt-3.5-turbo',
-          messages: [{ role: 'user', content: text }],
+          // messages: [{ role: 'user', content: text }],
+          messages:[
+            {
+              role: "system",
+              content: "You are a helpful assistant. Always respond in English.",
+            },
+            {
+              role: "user",
+              content: "Hello, how are you?",
+            }
+          ]
         }),
       });
 
